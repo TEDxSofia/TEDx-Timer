@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Primary Meta Tags -->
+    <title>TEDx Timer - The power by ❤️ TEDxSofia</title>
+    <meta name="title" content="TEDx Timer - The power by ❤️ TEDxSofia">
+    <meta name="description" content="Every good presenter needs a good TEDx timer! This countdown timer contains everything you need.">
+    <meta name="keywords" content="TEDx Timer, Timer, Countdown, Countdown timer, TEDx, TED, 18 min, 18min, minutes, events">
+    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="max-image-preview:large" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="TEDx Timer" />
+    <meta property="og:url" content="https://tedxsofia.org/timer/" />
+    <meta property="og:title" content="TEDx Timer - The power by ❤️ TEDxSofia" />
+    <meta property="og:description" content="Every good presenter needs a good TEDx timer! This countdown timer contains everything you need." />
+    <meta property="og:image" content="Cover-TEDxSofia-Timer.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="628" />
+    <meta property="og:image:alt" content="Perfect timer for TEDx events." />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://tedxsofia.org/timer/" />
+    <meta property="twitter:title" content="TEDx Timer - The power by ❤️ TEDxSofia" />
+    <meta property="twitter:description" content="Every good presenter needs a good TEDx timer! This countdown timer contains everything you need." />
+    <meta property="twitter:image" content="Cover-TEDxSofia-Timer.jpg">
+    <meta property="twitter:image:alt" content="Perfect timer for TEDx events." />
+</head>
+
+<body oncontextmenu="return false">
+    <div class="nav-toggle">
+        <div class="nav-toggle-bar"></div>
+    </div>
+    <nav id="nav" class="nav">
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Time</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-stopwatch fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <input type="range" min="1" max="60" value="18" class="slider" id="rangeTime">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Display size</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-text-height fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <input type="range" min="14" max="39" value="26" class="slider" id="rangeDisplaySize">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Background color</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-paint-brush fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <button onclick="backgroundColorSwitch()" id="btnBgSwitch">Black</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Full size</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-expand-arrows-alt fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <button onclick="toggleFullScreen()" id="btnToggleFullScreen">On</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Default time</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-sync-alt fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <button onclick="setNewTime()">18 min</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="content-menu">
+                <p>Shortcuts</p>
+                <div class="settings-timer">
+                    <div class="icon-settings">
+                        <i class="fas fa-keyboard fa-2x"></i>
+                    </div>
+                    <div class="action-setting">
+                        <button onclick="btnNavHelper()">Helper</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-menu">
+            <div class="about-TEDxTimer">
+                <p>
+                    The power by ❤️ <strong><a href="https://tedxsofia.org/">TEDxSofia</a></strong>
+                </p>
+                <p>
+                    <a href="https://github.com/TEDxSofia/TEDx-Timer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github fa-2x"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </nav>
+    <nav class="nav-helper">
+        <div class="container-helper">
+            <div>
+                <div class="contest-helper">
+                    <p>Increase time:</p>
+                    <code>Arrow Up</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Decrease time:</p>
+                    <code>Arrow Down</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Display size up:</p>
+                    <code>Arrow Right</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Display size down: </p>
+                    <code>Arrow Left</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Start / Pause:</p>
+                    <code>Space</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Background color:</p>
+                    <code>Key "B"</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Full size:</p>
+                    <code>Key "F"</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Default time:</p>
+                    <code>Key "R"</code>
+                </div>
+                <div class="contest-helper">
+                    <p>Open / close helper:</p>
+                    <code>Key "H"</code>
+                </div>
+                <div class="close-helper">
+                    <button onclick="btnNavHelper()">
+                        <i class="fas fa-times fa-3x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrap">
+        <span id="displayTime" class="headTime">18:00</span>
+        <span id="overDisplayTime" class="second-time">00:00</span>
+
+    </div>
+
+    <div class="container-button">
+        <button id="btnPlayPause" class="btn-play-pause-style" onclick="this.startPauseEvent()">
+            <i class="fas fa-play fa-2x"></i>
+        </button>
+    </div>
+</body>
+<script src="script.min.js"></script>
+
+</html>
